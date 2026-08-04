@@ -14,59 +14,61 @@ interface EventGallery {
   images: string[];
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const eventsData: EventGallery[] = [
   {
     id: 'event-1',
     title: 'From Campus to Corporate',
     date: '5-6 June, 2026',
-    mainImage: '/giita/images/gallery/event1/main.jpg',
+    mainImage: `${basePath}/images/gallery/event1/main.jpg`,
     images: [
-      '/giita/images/gallery/event1/main.jpg',
-      '/giita/images/gallery/event1/1.jpg',
-      '/giita/images/gallery/event1/2.jpg',
-      '/giita/images/gallery/event1/3.jpg',
+      `${basePath}/images/gallery/event1/main.jpg`,
+      `${basePath}/images/gallery/event1/1.jpg`,
+      `${basePath}/images/gallery/event1/2.jpg`,
+      `${basePath}/images/gallery/event1/3.jpg`,
     ],
   },
   {
     id: 'event-2',
     title: 'Creating Synergy At Work',
     date: '12.06.2026',
-    mainImage: '/giita/images/gallery/event2/1.jpg',
+    mainImage: `${basePath}/images/gallery/event2/1.jpg`,
     images: [
-      '/giita/images/gallery/event2/1.jpg',
-      '/giita/images/gallery/event2/2.jpg',
-      '/giita/images/gallery/event2/3.jpg',
-      '/giita/images/gallery/event2/4.jpg',
-      '/giita/images/gallery/event2/5.jpg',
-      '/giita/images/gallery/event2/6.jpg',
+      `${basePath}/images/gallery/event2/1.jpg`,
+      `${basePath}/images/gallery/event2/2.jpg`,
+      `${basePath}/images/gallery/event2/3.jpg`,
+      `${basePath}/images/gallery/event2/4.jpg`,
+      `${basePath}/images/gallery/event2/5.jpg`,
+      `${basePath}/images/gallery/event2/6.jpg`,
     ],
   },
   {
     id: 'event-3',
     title: 'First Time Leader',
     date: '24.06.2026 & 25.06.2026',
-    mainImage: '/giita/images/gallery/event3/1.jpg',
+    mainImage: `${basePath}/images/gallery/event3/1.jpg`,
     images: [
-      '/giita/images/gallery/event3/1.jpg',
-      '/giita/images/gallery/event3/2.jpg',
-      '/giita/images/gallery/event3/3.jpg',
-      '/giita/images/gallery/event3/4.jpg',
-      '/giita/images/gallery/event3/5.jpg',
-      '/giita/images/gallery/event3/6.jpg'
+      `${basePath}/images/gallery/event3/1.jpg`,
+      `${basePath}/images/gallery/event3/2.jpg`,
+      `${basePath}/images/gallery/event3/3.jpg`,
+      `${basePath}/images/gallery/event3/4.jpg`,
+      `${basePath}/images/gallery/event3/5.jpg`,
+      `${basePath}/images/gallery/event3/6.jpg`
     ],
   },
   {
     id: 'event-4',
     title: '6 Sigma Green Belt Training',
     date: '20.07.2026 - 23.07.2026',
-    mainImage: '/giita/images/gallery/event4/1.jpeg',
+    mainImage: `${basePath}/images/gallery/event4/1.jpeg`,
     images: [
-      '/giita/images/gallery/event4/1.jpeg',
-      '/giita/images/gallery/event4/2.jpeg',
-      '/giita/images/gallery/event4/3.jpeg',
-      '/giita/images/gallery/event4/4.jpeg',
-      // '/giita/images/gallery/event4/5.jpeg',
-      // '/giita/images/gallery/event4/6.jpeg'
+      `${basePath}/images/gallery/event4/1.jpeg`,
+      `${basePath}/images/gallery/event4/2.jpeg`,
+      `${basePath}/images/gallery/event4/3.jpeg`,
+      `${basePath}/images/gallery/event4/4.jpeg`,
+      // `${basePath}/images/gallery/event4/5.jpeg`,
+      // `${basePath}/images/gallery/event4/6.jpeg`
     ],
   }
 ];

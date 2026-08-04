@@ -1,4 +1,4 @@
-// next.config.ts
+`// next.config.ts
 import type { NextConfig } from 'next';
 
 // 🔐 Security headers
@@ -43,7 +43,6 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  basePath: '/giita',
 
   poweredByHeader: false, // Hide X-Powered-By
 
@@ -70,3 +69,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+`

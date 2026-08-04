@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const videoSrc = 'https://pub-6e380ffc48a9477ea8031f2a34a815f6.r2.dev/GIITA-V3.mp4';
 
 type Mode = 'ILT' | 'VILT';
 
@@ -716,7 +717,7 @@ export default function UpcomingProgramsSection() {
               playsInline
               preload="metadata"
             >
-              <source src={`${basePath}/GIITA-V3.mp4`} type="video/mp4" />
+              <source src={videoSrc} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

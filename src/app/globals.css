@@ -1,0 +1,39 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: var(--font-roboto) !important;
+}
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+/* Custom Global Styles for Gainwell */
+
+/* Body Styling */
+body {
+  @apply font-roboto text-gray-800 bg-white leading-relaxed;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-roboto font-bold text-gainwell-darkblue;
+}
+
+/* Links */
+a {
+  @apply text-gainwell-blue hover:text-gainwell-orange transition-colors;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply bg-gainwell-orange text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gainwell-blue transition-all;
+}
+
+.btn-secondary {
+  @apply bg-gainwell-green text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gainwell-darkblue transition-all;
+}

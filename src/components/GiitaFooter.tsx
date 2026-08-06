@@ -51,12 +51,37 @@ const GiitaFooter: React.FC = () => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder submit — wire up backend later
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    setForm({ name: '', email: '', phone: '', program: '', message: '' });
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/coordinator@gainwellacademy.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...form,
+          _subject: 'New Contact Form Enquiry from GIITA Website!',
+          _template: 'table',
+          _captcha: 'false'
+        }),
+      });
+
+      const data = await response.json();
+      console.log('FormSubmit response:', data);
+
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 4000);
+        setForm({ name: '', email: '', phone: '', program: '', message: '' });
+      } else {
+        alert('Failed to send message.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred while sending your message.');
+    }
   };
 
   if (!isMounted) return null;
@@ -190,6 +215,8 @@ const GiitaFooter: React.FC = () => {
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
+                    {/* <input type="hidden" name="_next" value="https://yourwebsite.com/#contact" /> */}
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
                         <label className="block text-xs font-semibold text-slate-300 mb-1.5 uppercase tracking-wider">Full Name *</label>

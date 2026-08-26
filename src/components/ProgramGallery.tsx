@@ -65,8 +65,10 @@ const eventsData: EventGallery[] = [
       '/giita/images/gallery/event4/2.jpeg',
       '/giita/images/gallery/event4/3.jpeg',
       '/giita/images/gallery/event4/4.jpeg',
-      // '/giita/images/gallery/event4/5.jpeg',
-      // '/giita/images/gallery/event4/6.jpeg'
+      '/giita/images/gallery/event4/5.jpeg',
+      '/giita/images/gallery/event4/6.jpeg',
+      '/giita/images/gallery/event4/7.jpeg',
+      '/giita/images/gallery/event4/8.jpeg'
     ],
   }
 ];

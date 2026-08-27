@@ -61,7 +61,7 @@ const eventsData: EventGallery[] = [
     id: 'event-4',
     title: '6 Sigma Green Belt Training',
     date: '20.07.2026 - 23.07.2026',
-    mainImage: `${basePath}/images/gallery/event4/1.jpeg`,
+    mainImage: `${basePath}/images/gallery/event4/1.jpg`,
     images: [
       `${basePath}/images/gallery/event4/1.jpg`,
       `${basePath}/images/gallery/event4/2.jpg`,

@@ -63,12 +63,14 @@ const eventsData: EventGallery[] = [
     date: '20.07.2026 - 23.07.2026',
     mainImage: `${basePath}/images/gallery/event4/1.jpeg`,
     images: [
-      `${basePath}/images/gallery/event4/1.jpeg`,
-      `${basePath}/images/gallery/event4/2.jpeg`,
-      `${basePath}/images/gallery/event4/3.jpeg`,
-      `${basePath}/images/gallery/event4/4.jpeg`,
-      // `${basePath}/images/gallery/event4/5.jpeg`,
-      // `${basePath}/images/gallery/event4/6.jpeg`
+      `${basePath}/images/gallery/event4/1.jpg`,
+      `${basePath}/images/gallery/event4/2.jpg`,
+      `${basePath}/images/gallery/event4/3.jpg`,
+      `${basePath}/images/gallery/event4/4.jpg`,
+      `${basePath}/images/gallery/event4/5.jpeg`,
+      `${basePath}/images/gallery/event4/6.jpeg`,
+      `${basePath}/images/gallery/event4/7.jpeg`,
+      `${basePath}/images/gallery/event4/8.jpeg`,
     ],
   }
 ];

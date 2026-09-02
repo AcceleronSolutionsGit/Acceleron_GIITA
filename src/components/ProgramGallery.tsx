@@ -60,17 +60,17 @@ const eventsData: EventGallery[] = [
   {
     id: 'event-4',
     title: '6 Sigma Green Belt Training',
-    date: '20.07.2026 - 23.07.2026',
+    date: 'Week 1 – 20th July to 23rd July\nWeek 2 – 18th August to 21st August',
     mainImage: `${basePath}/images/gallery/event4/1.jpg`,
     images: [
       `${basePath}/images/gallery/event4/1.jpg`,
       `${basePath}/images/gallery/event4/2.jpg`,
       `${basePath}/images/gallery/event4/3.jpg`,
       `${basePath}/images/gallery/event4/4.jpg`,
-      `${basePath}/images/gallery/event4/5.jpeg`,
-      `${basePath}/images/gallery/event4/6.jpeg`,
-      `${basePath}/images/gallery/event4/7.jpeg`,
-      `${basePath}/images/gallery/event4/8.jpeg`,
+      // `${basePath}/images/gallery/event4/5.jpeg`,
+      // `${basePath}/images/gallery/event4/6.jpeg`,
+      // `${basePath}/images/gallery/event4/7.jpeg`,
+      // `${basePath}/images/gallery/event4/8.jpeg`,
     ],
   }
 ];
@@ -169,7 +169,7 @@ export default function ProgramGallery() {
                   </div>
 
                   <div className="absolute bottom-0 left-0 w-full p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="text-[#F5872E] text-sm font-semibold mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                    <p className="text-[#F5872E] text-sm font-semibold mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 whitespace-pre-line">
                       {event.date}
                     </p>
                     <h3 className="text-xl font-bold text-white leading-tight mb-2 drop-shadow-md">

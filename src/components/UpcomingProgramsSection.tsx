@@ -36,7 +36,7 @@ const trainingCalendar: MonthData[] = [
       { topic: 'Creating Synergy at Work', date: '09 Jun 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Vaishali Bairagi', batchSize: 15, start: '2026-06-09', end: '2026-06-09' },
       { topic: 'Personal Effectiveness', date: '11–12 Jun 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Kiran Agarwal', batchSize: 15, start: '2026-06-11', end: '2026-06-12' },
       { topic: 'DEI & PoSH Awareness Workshop', date: '16 Jun 2026', mode: 'VILT', venue: 'NA', faculty: 'Vaishali Bairagi', batchSize: 20, start: '2026-06-16', end: '2026-06-16' },
-      { topic: 'First Time Leader', date: '18–19 Jun 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Nilasish Dey', batchSize: 15, start: '2026-06-18', end: '2026-06-19' },
+      // { topic: 'First Time Leader', date: '18–19 Jun 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Nilasish Dey', batchSize: 15, start: '2026-06-18', end: '2026-06-19' },
       { topic: '6 SIGMA Green Belt (GB) Training — Week 1', date: '17–20 Jun 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Biswajit Mukherjee', batchSize: 15, remarks: '50% reservation for Female Candidates', start: '2026-06-17', end: '2026-06-20' },
       { topic: 'Effective PowerPoint Presentation', date: '22–23 Jun 2026', mode: 'VILT', venue: 'NA', faculty: 'External', batchSize: 25, start: '2026-06-22', end: '2026-06-23' },
       { topic: 'DEI & PoSH Awareness Workshop', date: '24 Jun 2026', mode: 'VILT', venue: 'NA', faculty: 'Kiran Agarwal', batchSize: 20, start: '2026-06-24', end: '2026-06-24' },
@@ -61,17 +61,17 @@ const trainingCalendar: MonthData[] = [
         start: '2026-06-19',
         end: '2026-06-19'
       },
-      {
-        topic: 'First Time Leader',
-        date: '24.06.26–25.06.26',
-        mode: 'ILT',
-        venue: 'Kolkata',
-        faculty: 'Nilasish Dey',
-        batchSize: 5,
-        start: '2026-06-24',
-        end: '2026-06-25',
-        remarks: 'RMSPL-2 & PCM-1'
-      },
+      // {
+      //   topic: 'First Time Leader',
+      //   date: '24.06.26–25.06.26',
+      //   mode: 'ILT',
+      //   venue: 'Kolkata',
+      //   faculty: 'Nilasish Dey',
+      //   batchSize: 5,
+      //   start: '2026-06-24',
+      //   end: '2026-06-25',
+      //   remarks: 'RMSPL-2 & PCM-1'
+      // },
       {
         topic: 'DEI & PoSH Awareness Workshop',
         date: '24.06.26',
@@ -119,16 +119,16 @@ const trainingCalendar: MonthData[] = [
         end: '2026-07-08',
         remarks: 'GTPL-2'
       },
-      {
-        topic: 'Personal Effectiveness',
-        date: '15.07.26 & 16.07.26',
-        mode: 'ILT',
-        venue: 'Asansol',
-        faculty: 'Nilasish Dey',
-        batchSize: 11,
-        start: '2026-07-15',
-        end: '2026-07-16'
-      },
+      // {
+      //   topic: 'Personal Effectiveness',
+      //   date: '15.07.26 & 16.07.26',
+      //   mode: 'ILT',
+      //   venue: 'Asansol',
+      //   faculty: 'Nilasish Dey',
+      //   batchSize: 11,
+      //   start: '2026-07-15',
+      //   end: '2026-07-16'
+      // },
       {
         topic: 'The Winning Edge',
         date: '15.07.26',
@@ -139,16 +139,16 @@ const trainingCalendar: MonthData[] = [
         start: '2026-07-15',
         end: '2026-07-15'
       },
-      {
-        topic: 'Interviewing Skill Workshop',
-        date: '21.07.26–22.07.26',
-        mode: 'ILT',
-        venue: 'Kolkata',
-        faculty: 'Nilasish Dey',
-        batchSize: 15,
-        start: '2026-07-21',
-        end: '2026-07-22'
-      },
+      // {
+      //   topic: 'Interviewing Skill Workshop',
+      //   date: '21.07.26–22.07.26',
+      //   mode: 'ILT',
+      //   venue: 'Kolkata',
+      //   faculty: 'Nilasish Dey',
+      //   batchSize: 15,
+      //   start: '2026-07-21',
+      //   end: '2026-07-22'
+      // },
       {
         topic: 'Campus to Corporate',
         date: '17.07.26–18.07.26',
@@ -229,7 +229,7 @@ const trainingCalendar: MonthData[] = [
     color: '#8B5CF6',
     bgColor: 'bg-[#8B5CF6]',
     items: [
-      { topic: 'Interviewing Skill Workshop', date: '03–04 Sep 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Nilasish Dey', batchSize: 15, start: '2026-09-03', end: '2026-09-04' },
+      // { topic: 'Interviewing Skill Workshop', date: '03–04 Sep 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Nilasish Dey', batchSize: 15, start: '2026-09-03', end: '2026-09-04' },
       { topic: 'SOS & Contamination Control', date: '07 Sep 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Dr. D Mukherjee', batchSize: 15, start: '2026-09-07', end: '2026-09-07' },
       { topic: 'The Winning Edge', date: '08 Sep 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Vaishali Bairagi', batchSize: 15, start: '2026-09-08', end: '2026-09-08' },
       { topic: 'Impactful Communication', date: '11 Sep 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Kiran Agarwal', batchSize: 15, start: '2026-09-11', end: '2026-09-11' },

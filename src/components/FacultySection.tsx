@@ -31,14 +31,14 @@ const facultyData: FacultyMember[] = [
     image: `${basePath}/images/faculty/kiran-agarwal.png`,
     color: 'from-[#F5872E] to-[#c96a15]',
   },
-  {
-    id: 3,
-    name: 'Nilasish Dey',
-    designation: 'Power Skills/Leadership Skills Trainer',
-    initials: 'ND',
-    image: `${basePath}/images/faculty/nilasish-dey.jpg`,
-    color: 'from-[#40A748] to-[#2d7a35]',
-  },
+  // {
+  //   id: 3,
+  //   name: 'Nilasish Dey',
+  //   designation: 'Power Skills/Leadership Skills Trainer',
+  //   initials: 'ND',
+  //   image: `${basePath}/images/faculty/nilasish-dey.jpg`,
+  //   color: 'from-[#40A748] to-[#2d7a35]',
+  // },
   {
     id: 4,
     name: 'Biswajit Mukherjee',

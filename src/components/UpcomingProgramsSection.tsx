@@ -100,7 +100,7 @@ const trainingCalendar: MonthData[] = [
     color: '#F5872E',
     bgColor: 'bg-[#F5872E]',
     items: [
-      { topic: 'Interviewing Skill Workshop', date: '03–04 Jul 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Nilasish Dey', batchSize: 15, start: '2026-07-03', end: '2026-07-04' },
+      // { topic: 'Interviewing Skill Workshop', date: '03–04 Jul 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Nilasish Dey', batchSize: 15, start: '2026-07-03', end: '2026-07-04' },
       { topic: 'We Before Me: Teamwork Basics', date: '07 Jul 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Vaishali Bairagi', batchSize: 15, start: '2026-07-07', end: '2026-07-07' },
       { topic: '6 SIGMA GB Project Coaching (Batch 2)', date: '08–10 Jul 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Biswajit Mukherjee', batchSize: 8, start: '2026-07-08', end: '2026-07-10' },
       { topic: 'Value Selling', date: '13–14 Jul 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Biswajit Mukherjee', batchSize: 15, remarks: 'Target audience: Sales and After Market', start: '2026-07-13', end: '2026-07-14' },

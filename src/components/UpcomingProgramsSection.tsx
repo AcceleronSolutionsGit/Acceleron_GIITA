@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
-type Mode = 'ILT' | 'VILT';
+type Mode = 'ILT' | 'VILT' | 'TBD';
 
 interface TrainingItem {
   topic: string;
@@ -20,6 +20,8 @@ interface TrainingItem {
 
 interface MonthData {
   month: string;
+  monthIndex: number;
+  year: number;
   color: string;
   bgColor: string;
   items: TrainingItem[];
@@ -27,7 +29,226 @@ interface MonthData {
 
 const trainingCalendar: MonthData[] = [
   {
+    month: 'October 2026',
+    monthIndex: 9,
+    year: 2026,
+    color: '#3A55A5',
+    bgColor: 'bg-[#3A55A5]',
+    items: [
+      {
+        topic: 'Prioritization for Operational Excellence',
+        date: '06.10.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'External',
+        batchSize: 15,
+        remarks: 'GEPL',
+        start: '2026-10-06',
+        end: '2026-10-06',
+      },
+      {
+        topic: 'DEI & POSH Awareness',
+        date: '06.10.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'Vaishali Bairagi',
+        batchSize: 15,
+        remarks: 'GCPL (FOC)',
+        start: '2026-10-06',
+        end: '2026-10-06',
+      },
+      {
+        topic: 'Finance for Non-Finance',
+        date: '12.10.26–13.10.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'External (iSkillBox)',
+        batchSize: 15,
+        remarks: 'Mr. Alok',
+        start: '2026-10-12',
+        end: '2026-10-13',
+      },
+      {
+        topic: 'Navigating Change with Confidence',
+        date: '14.10.26–15.10.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'Vaishali Bairagi',
+        batchSize: 15,
+        remarks: 'Acceleron',
+        start: '2026-10-14',
+        end: '2026-10-15',
+      },
+      {
+        topic: 'The Art of Connection: Effective Communication',
+        date: '30.10.26–31.10.26',
+        mode: 'ILT',
+        venue: 'Kolkata',
+        faculty: 'Kiran Agarwal',
+        batchSize: 15,
+        remarks: 'Acceleron',
+        start: '2026-10-30',
+        end: '2026-10-31',
+      },
+    ],
+  },
+  {
+    month: 'November 2026',
+    monthIndex: 10,
+    year: 2026,
+    color: '#F5872E',
+    bgColor: 'bg-[#F5872E]',
+    items: [
+      {
+        topic: 'First Time Managers: Emerging Leader',
+        date: '05.11.26 – 06.11.26',
+        mode: 'ILT',
+        venue: 'Kolkata',
+        faculty: 'Kiran',
+        batchSize: 15,
+        remarks: 'Acceleron+TIL',
+        start: '2026-11-05',
+        end: '2026-11-06',
+      },
+      {
+        topic: 'Creativity & Design Thinking',
+        date: '03.11.26 – 04.11.26',
+        mode: 'ILT',
+        venue: 'Kolkata',
+        faculty: 'Kiran',
+        batchSize: 15,
+        remarks: 'GEPL',
+        start: '2026-11-03',
+        end: '2026-11-04',
+      },
+      {
+        topic: '5S Workshop',
+        date: '17.11.26',
+        mode: 'ILT',
+        venue: 'Greater Noida',
+        faculty: 'External',
+        batchSize: 15,
+        remarks: 'GCPL',
+        start: '2026-11-17',
+        end: '2026-11-17',
+      },
+      {
+        topic: 'Seven Habits of Highly Effective People',
+        date: '17.11.26–18.11.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'Vaishali Bairagi',
+        batchSize: 15,
+        remarks: 'Acceleron',
+        start: '2026-11-17',
+        end: '2026-11-18',
+      },
+      {
+        topic: 'Advance Excel',
+        date: '19.11.26–20.11.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'External',
+        batchSize: 15,
+        remarks: 'All',
+        start: '2026-11-19',
+        end: '2026-11-20',
+      },
+      {
+        topic: 'DEI & POSH Awareness',
+        date: '25.11.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'Vaishali Bairagi',
+        batchSize: 15,
+        remarks: 'GTPL',
+        start: '2026-11-25',
+        end: '2026-11-25',
+      },
+    ],
+  },
+  {
+    month: 'December 2026',
+    monthIndex: 11,
+    year: 2026,
+    color: '#40A748',
+    bgColor: 'bg-[#40A748]',
+    items: [
+      {
+        topic: 'Secret to Customer Delight',
+        date: '08.12.26 – 09.12.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'Samuel',
+        batchSize: 15,
+        remarks: 'Acceleron+TIL+GCPL',
+        start: '2026-12-08',
+        end: '2026-12-09',
+      },
+      {
+        topic: 'DEI & POSH Awareness',
+        date: '15.12.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'Vaishali Bairagi',
+        batchSize: 15,
+        remarks: 'GEPL',
+        start: '2026-12-15',
+        end: '2026-12-15',
+      },
+      {
+        topic: 'Resilience in High-Pressure Environments',
+        date: '15.12.26',
+        mode: 'TBD',
+        venue: 'TBD',
+        faculty: 'TBD',
+        batchSize: 15,
+        remarks: 'GEPL',
+        start: '2026-12-15',
+        end: '2026-12-15',
+      },
+      {
+        topic: 'Mastering Negotiation',
+        date: '17.12.26',
+        mode: 'TBD',
+        venue: 'TBD',
+        faculty: 'External/Samuel',
+        batchSize: 15,
+        remarks: 'GCPL+Acceleron',
+        start: '2026-12-17',
+        end: '2026-12-17',
+      },
+      {
+        topic: 'Effective PowerPoint Presentation',
+        date: '18.12.26 – 19.12.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'External',
+        batchSize: 15,
+        remarks: 'All',
+        start: '2026-12-18',
+        end: '2026-12-19',
+      },
+      {
+        topic: 'Interviewing Skills Workshop',
+        date: '22.12.26',
+        mode: 'ILT',
+        venue: 'NA',
+        faculty: 'TBD',
+        batchSize: 15,
+        remarks: 'TIL',
+        start: '2026-12-22',
+        end: '2026-12-22',
+      },
+    ],
+  },
+];
+
+const previousTrainingCalendar: MonthData[] = [
+  {
     month: 'June 2026',
+    monthIndex: 5,
+    year: 2026,
     color: '#3A55A5',
     bgColor: 'bg-[#3A55A5]',
     items: [
@@ -36,71 +257,23 @@ const trainingCalendar: MonthData[] = [
       { topic: 'Creating Synergy at Work', date: '09 Jun 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Vaishali Bairagi', batchSize: 15, start: '2026-06-09', end: '2026-06-09' },
       { topic: 'Personal Effectiveness', date: '11–12 Jun 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Kiran Agarwal', batchSize: 15, start: '2026-06-11', end: '2026-06-12' },
       { topic: 'DEI & PoSH Awareness Workshop', date: '16 Jun 2026', mode: 'VILT', venue: 'NA', faculty: 'Vaishali Bairagi', batchSize: 20, start: '2026-06-16', end: '2026-06-16' },
-      // { topic: 'First Time Leader', date: '18–19 Jun 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Nilasish Dey', batchSize: 15, start: '2026-06-18', end: '2026-06-19' },
       { topic: '6 SIGMA Green Belt (GB) Training — Week 1', date: '17–20 Jun 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Biswajit Mukherjee', batchSize: 15, remarks: '50% reservation for Female Candidates', start: '2026-06-17', end: '2026-06-20' },
       { topic: 'Effective PowerPoint Presentation', date: '22–23 Jun 2026', mode: 'VILT', venue: 'NA', faculty: 'External', batchSize: 25, start: '2026-06-22', end: '2026-06-23' },
       { topic: 'DEI & PoSH Awareness Workshop', date: '24 Jun 2026', mode: 'VILT', venue: 'NA', faculty: 'Kiran Agarwal', batchSize: 20, start: '2026-06-24', end: '2026-06-24' },
       { topic: '6 SIGMA GB Project Coaching (Batch 1)', date: '29 Jun–01 Jul 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Biswajit Mukherjee', batchSize: 7, start: '2026-06-29', end: '2026-07-01' },
-      {
-        topic: 'Creating Synergy at Work',
-        date: '12.06.26',
-        mode: 'ILT',
-        venue: 'Greater Noida',
-        faculty: 'Vaishali Bairagi',
-        batchSize: 12,
-        start: '2026-06-12',
-        end: '2026-06-12'
-      },
-      {
-        topic: 'DEI & PoSH Awareness Workshop',
-        date: '19.06.26',
-        mode: 'VILT',
-        venue: 'NA',
-        faculty: 'Vaishali Bairagi',
-        batchSize: 61,
-        start: '2026-06-19',
-        end: '2026-06-19'
-      },
-      // {
-      //   topic: 'First Time Leader',
-      //   date: '24.06.26–25.06.26',
-      //   mode: 'ILT',
-      //   venue: 'Kolkata',
-      //   faculty: 'Nilasish Dey',
-      //   batchSize: 5,
-      //   start: '2026-06-24',
-      //   end: '2026-06-25',
-      //   remarks: 'RMSPL-2 & PCM-1'
-      // },
-      {
-        topic: 'DEI & PoSH Awareness Workshop',
-        date: '24.06.26',
-        mode: 'VILT',
-        venue: 'NA',
-        faculty: 'Kiran Agarwal',
-        batchSize: 60,
-        start: '2026-06-24',
-        end: '2026-06-24'
-      },
-      {
-        topic: 'Effective Power Point Presentation (Batch -1)',
-        date: '24.06.26–25.06.26',
-        mode: 'VILT',
-        venue: 'NA',
-        faculty: 'External',
-        batchSize: 21,
-        start: '2026-06-24',
-        end: '2026-06-25',
-        remarks: 'GCPL-5'
-      }
+      { topic: 'Creating Synergy at Work', date: '12.06.26', mode: 'ILT', venue: 'Greater Noida', faculty: 'Vaishali Bairagi', batchSize: 12, start: '2026-06-12', end: '2026-06-12' },
+      { topic: 'DEI & PoSH Awareness Workshop', date: '19.06.26', mode: 'VILT', venue: 'NA', faculty: 'Vaishali Bairagi', batchSize: 61, start: '2026-06-19', end: '2026-06-19' },
+      { topic: 'DEI & PoSH Awareness Workshop', date: '24.06.26', mode: 'VILT', venue: 'NA', faculty: 'Kiran Agarwal', batchSize: 60, start: '2026-06-24', end: '2026-06-24' },
+      { topic: 'Effective Power Point Presentation (Batch -1)', date: '24.06.26–25.06.26', mode: 'VILT', venue: 'NA', faculty: 'External', batchSize: 21, start: '2026-06-24', end: '2026-06-25', remarks: 'GCPL-5' }
     ],
   },
   {
     month: 'July 2026',
+    monthIndex: 6,
+    year: 2026,
     color: '#F5872E',
     bgColor: 'bg-[#F5872E]',
     items: [
-      // { topic: 'Interviewing Skill Workshop', date: '03–04 Jul 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Nilasish Dey', batchSize: 15, start: '2026-07-03', end: '2026-07-04' },
       { topic: 'We Before Me: Teamwork Basics', date: '07 Jul 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Vaishali Bairagi', batchSize: 15, start: '2026-07-07', end: '2026-07-07' },
       { topic: '6 SIGMA GB Project Coaching (Batch 2)', date: '08–10 Jul 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Biswajit Mukherjee', batchSize: 8, start: '2026-07-08', end: '2026-07-10' },
       { topic: 'Value Selling', date: '13–14 Jul 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Biswajit Mukherjee', batchSize: 15, remarks: 'Target audience: Sales and After Market', start: '2026-07-13', end: '2026-07-14' },
@@ -108,106 +281,19 @@ const trainingCalendar: MonthData[] = [
       { topic: 'Finance for Non Finance', date: '16 Jul 2026', mode: 'VILT', venue: 'NA', faculty: 'External', batchSize: 25, start: '2026-07-16', end: '2026-07-16' },
       { topic: '6 SIGMA Green Belt Training — Week 2', date: '20–23 Jul 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Biswajit Mukherjee', batchSize: 15, remarks: '50% reservation for Female Candidates', start: '2026-07-20', end: '2026-07-23' },
       { topic: 'Advance Excel', date: '22–23 Jul 2026', mode: 'VILT', venue: 'NA', faculty: 'External', batchSize: 25, start: '2026-07-22', end: '2026-07-23' },
-      {
-        topic: 'We Before Me: Teamwork Basics',
-        date: '07.07.26–08.07.26',
-        mode: 'VILT',
-        venue: 'NA',
-        faculty: 'Vaishali Bairagi',
-        batchSize: 25,
-        start: '2026-07-07',
-        end: '2026-07-08',
-        remarks: 'GTPL-2'
-      },
-      // {
-      //   topic: 'Personal Effectiveness',
-      //   date: '15.07.26 & 16.07.26',
-      //   mode: 'ILT',
-      //   venue: 'Asansol',
-      //   faculty: 'Nilasish Dey',
-      //   batchSize: 11,
-      //   start: '2026-07-15',
-      //   end: '2026-07-16'
-      // },
-      {
-        topic: 'The Winning Edge',
-        date: '15.07.26',
-        mode: 'ILT',
-        venue: 'Kolkata',
-        faculty: 'Kiran Agarwal',
-        batchSize: 15,
-        start: '2026-07-15',
-        end: '2026-07-15'
-      },
-      // {
-      //   topic: 'Interviewing Skill Workshop',
-      //   date: '21.07.26–22.07.26',
-      //   mode: 'ILT',
-      //   venue: 'Kolkata',
-      //   faculty: 'Nilasish Dey',
-      //   batchSize: 15,
-      //   start: '2026-07-21',
-      //   end: '2026-07-22'
-      // },
-      {
-        topic: 'Campus to Corporate',
-        date: '17.07.26–18.07.26',
-        mode: 'ILT',
-        venue: 'Kolkata',
-        faculty: 'Kiran Agarwal',
-        batchSize: 44,
-        start: '2026-07-17',
-        end: '2026-07-18',
-        remarks: 'Tgt Audience-CS, P&E, Facility, Corporate PS'
-      },
-      {
-        topic: 'Campus to Corporate',
-        date: '17.07.26–18.07.26',
-        mode: 'ILT',
-        venue: 'Greater Noida',
-        faculty: 'Vaishali Bairagi',
-        batchSize: 33,
-        start: '2026-07-17',
-        end: '2026-07-18',
-        remarks: 'Tgt Audience-MARC Mining, Facility, HR'
-      },
-      {
-        topic: 'Effective Power Point Presentation (Batch -2)',
-        date: '20.07.26–21.07.26',
-        mode: 'VILT',
-        venue: 'NA',
-        faculty: 'External',
-        batchSize: 22,
-        start: '2026-07-20',
-        end: '2026-07-21',
-        remarks: 'ISG-4'
-      },
-      {
-        topic: '6 SIGMA Green Belt (GB) Training (Week 1)',
-        date: '20.07.26–23.07.26',
-        mode: 'ILT',
-        venue: 'Kolkata',
-        faculty: 'Biswajit Mukherjee',
-        batchSize: 7,
-        start: '2026-07-20',
-        end: '2026-07-23',
-        remarks: '50% reservation for Female Candidates (TIL-6)'
-      },
-      {
-        topic: 'Advanced Excel',
-        date: '22.07.26–23.07.26',
-        mode: 'VILT',
-        venue: 'NA',
-        faculty: 'External',
-        batchSize: 4,
-        start: '2026-07-22',
-        end: '2026-07-23',
-        remarks: 'GCPL-19'
-      }
+      { topic: 'We Before Me: Teamwork Basics', date: '07.07.26–08.07.26', mode: 'VILT', venue: 'NA', faculty: 'Vaishali Bairagi', batchSize: 25, start: '2026-07-07', end: '2026-07-08', remarks: 'GTPL-2' },
+      { topic: 'The Winning Edge', date: '15.07.26', mode: 'ILT', venue: 'Kolkata', faculty: 'Kiran Agarwal', batchSize: 15, start: '2026-07-15', end: '2026-07-15' },
+      { topic: 'Campus to Corporate', date: '17.07.26–18.07.26', mode: 'ILT', venue: 'Kolkata', faculty: 'Kiran Agarwal', batchSize: 44, start: '2026-07-17', end: '2026-07-18', remarks: 'Tgt Audience-CS, P&E, Facility, Corporate PS' },
+      { topic: 'Campus to Corporate', date: '17.07.26–18.07.26', mode: 'ILT', venue: 'Greater Noida', faculty: 'Vaishali Bairagi', batchSize: 33, start: '2026-07-17', end: '2026-07-18', remarks: 'Tgt Audience-MARC Mining, Facility, HR' },
+      { topic: 'Effective Power Point Presentation (Batch -2)', date: '20.07.26–21.07.26', mode: 'VILT', venue: 'NA', faculty: 'External', batchSize: 22, start: '2026-07-20', end: '2026-07-21', remarks: 'ISG-4' },
+      { topic: '6 SIGMA Green Belt (GB) Training (Week 1)', date: '20.07.26–23.07.26', mode: 'ILT', venue: 'Kolkata', faculty: 'Biswajit Mukherjee', batchSize: 7, start: '2026-07-20', end: '2026-07-23', remarks: '50% reservation for Female Candidates (TIL-6)' },
+      { topic: 'Advanced Excel', date: '22.07.26–23.07.26', mode: 'VILT', venue: 'NA', faculty: 'External', batchSize: 4, start: '2026-07-22', end: '2026-07-23', remarks: 'GCPL-19' }
     ],
   },
   {
     month: 'August 2026',
+    monthIndex: 7,
+    year: 2026,
     color: '#40A748',
     bgColor: 'bg-[#40A748]',
     items: [
@@ -226,10 +312,11 @@ const trainingCalendar: MonthData[] = [
   },
   {
     month: 'September 2026',
+    monthIndex: 8,
+    year: 2026,
     color: '#8B5CF6',
     bgColor: 'bg-[#8B5CF6]',
     items: [
-      // { topic: 'Interviewing Skill Workshop', date: '03–04 Sep 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Nilasish Dey', batchSize: 15, start: '2026-09-03', end: '2026-09-04' },
       { topic: 'SOS & Contamination Control', date: '07 Sep 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Dr. D Mukherjee', batchSize: 15, start: '2026-09-07', end: '2026-09-07' },
       { topic: 'The Winning Edge', date: '08 Sep 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Vaishali Bairagi', batchSize: 15, start: '2026-09-08', end: '2026-09-08' },
       { topic: 'Impactful Communication', date: '11 Sep 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Kiran Agarwal', batchSize: 15, start: '2026-09-11', end: '2026-09-11' },
@@ -241,9 +328,23 @@ const trainingCalendar: MonthData[] = [
   },
 ];
 
+interface PreviousTrainingItemWithMonth extends TrainingItem {
+  month: string;
+  monthColor: string;
+}
+
+const allPreviousItems: PreviousTrainingItemWithMonth[] = previousTrainingCalendar.flatMap(m =>
+  m.items.map(item => ({
+    ...item,
+    month: m.month,
+    monthColor: m.color,
+  }))
+);
+
 const modeConfig: Record<Mode, { label: string; bg: string; text: string }> = {
   ILT: { label: 'ILT', bg: 'bg-blue-100', text: 'text-blue-700' },
   VILT: { label: 'VILT', bg: 'bg-green-100', text: 'text-green-700' },
+  TBD: { label: 'TBD', bg: 'bg-amber-100', text: 'text-amber-700' },
 };
 
 const parseLocalDate = (dateStr: string) => {
@@ -259,6 +360,13 @@ export default function UpcomingProgramsSection() {
   const [selectedDateStr, setSelectedDateStr] = useState<string>('');
   const [hoveredCellIdx, setHoveredCellIdx] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showPreviousMonths, setShowPreviousMonths] = useState(false);
+  const [previousMonthFilter, setPreviousMonthFilter] = useState<string>('all');
+  const previousMonthsRef = useRef<HTMLDivElement>(null);
+
+  const displayedPreviousItems = previousMonthFilter === 'all'
+    ? allPreviousItems
+    : allPreviousItems.filter(item => item.month === previousMonthFilter);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -302,8 +410,8 @@ export default function UpcomingProgramsSection() {
   const current = trainingCalendar[activeMonth];
 
   // Calendar generation logic
-  const year = 2026;
-  const monthIndex = activeMonth === 0 ? 5 : activeMonth === 1 ? 6 : activeMonth === 2 ? 7 : 8;
+  const year = current?.year ?? 2026;
+  const monthIndex = current?.monthIndex ?? (activeMonth === 0 ? 9 : activeMonth === 1 ? 10 : 11);
 
   const firstDayOfMonth = new Date(year, monthIndex, 1).getDay();
   const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
@@ -348,7 +456,7 @@ export default function UpcomingProgramsSection() {
     d.setHours(0, 0, 0, 0);
 
     const events: TrainingItem[] = [];
-    trainingCalendar.forEach(m => {
+    [...trainingCalendar, ...previousTrainingCalendar].forEach(m => {
       m.items.forEach(item => {
         const start = parseLocalDate(item.start);
         const end = parseLocalDate(item.end);
@@ -403,7 +511,7 @@ export default function UpcomingProgramsSection() {
             </span>
           </h2>
           <p className="mt-6 text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            GIITA Training Calendar — June to September 2026. Secure your spot in an upcoming batch or workshop.
+            GIITA Training Calendar — October to December 2026. Secure your spot in an upcoming batch or workshop.
           </p>
         </div>
 
@@ -449,7 +557,7 @@ export default function UpcomingProgramsSection() {
         </div>
 
         {/* Month Tabs */}
-        <div className={`flex flex-wrap justify-center gap-3 mb-8 transition-all duration-700 delay-300 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+        <div className={`flex flex-wrap items-center justify-center gap-3 mb-8 transition-all duration-700 delay-300 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           {trainingCalendar.map((m, i) => (
             <button
               key={m.month}
@@ -463,6 +571,29 @@ export default function UpcomingProgramsSection() {
               {m.month}
             </button>
           ))}
+
+          {/* Show Previous Months Button */}
+          <button
+            type="button"
+            onClick={() => {
+              const nextState = !showPreviousMonths;
+              setShowPreviousMonths(nextState);
+              if (nextState) {
+                setTimeout(() => {
+                  previousMonthsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+              }
+            }}
+            className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 flex items-center gap-2 border ${showPreviousMonths
+              ? 'bg-slate-800 text-white border-slate-800 shadow-md'
+              : 'bg-white text-gray-600 border-dashed border-gray-300 hover:border-gray-400 hover:text-gray-900'
+              }`}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            {showPreviousMonths ? 'Hide Previous Months' : 'Show Previous Months'}
+          </button>
         </div>
 
         {/* Training View Container */}
@@ -496,7 +627,7 @@ export default function UpcomingProgramsSection() {
                   </thead>
                   <tbody>
                     {current.items.map((item, i) => {
-                      const modeCfg = modeConfig[item.mode];
+                      const modeCfg = modeConfig[item.mode] || modeConfig.ILT;
                       return (
                         <tr
                           key={i}
@@ -532,7 +663,7 @@ export default function UpcomingProgramsSection() {
               {/* Mobile Cards */}
               <div className="md:hidden bg-white rounded-b-2xl shadow-lg border border-gray-100 divide-y divide-gray-100">
                 {current.items.map((item, i) => {
-                  const modeCfg = modeConfig[item.mode];
+                  const modeCfg = modeConfig[item.mode] || modeConfig.ILT;
                   return (
                     <div key={i} className="p-4">
                       <div className="flex items-start justify-between gap-3 mb-2">
@@ -639,7 +770,7 @@ export default function UpcomingProgramsSection() {
                             {dayEvents.map((evt, i) => (
                               <span
                                 key={i}
-                                className={`w-1.5 h-1.5 rounded-full ${evt.mode === 'ILT' ? 'bg-[#3A55A5]' : 'bg-[#40A748]'
+                                className={`w-1.5 h-1.5 rounded-full ${evt.mode === 'ILT' ? 'bg-[#3A55A5]' : evt.mode === 'VILT' ? 'bg-[#40A748]' : 'bg-amber-500'
                                   }`}
                               />
                             ))}
@@ -655,7 +786,9 @@ export default function UpcomingProgramsSection() {
                             title={evt.topic}
                             className={`text-[10px] px-2 py-0.5 rounded border font-semibold truncate leading-tight transition-transform duration-200 hover:scale-[1.02] ${evt.mode === 'ILT'
                               ? 'bg-blue-50 text-blue-700 border-blue-200'
-                              : 'bg-green-50 text-green-700 border-green-200'
+                              : evt.mode === 'VILT'
+                                ? 'bg-green-50 text-green-700 border-green-200'
+                                : 'bg-amber-50 text-amber-700 border-amber-200'
                               }`}
                           >
                             {evt.topic}
@@ -674,6 +807,168 @@ export default function UpcomingProgramsSection() {
 
             </div>
           )}
+        </div>
+
+        {/* Previous Months Section (Merged in one section) */}
+        <div ref={previousMonthsRef} className="mt-8 transition-all duration-700 ease-out">
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden transition-all duration-300">
+            {/* Accordion Toggle Header */}
+            <button
+              type="button"
+              onClick={() => setShowPreviousMonths(!showPreviousMonths)}
+              className="w-full px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-left bg-gradient-to-r from-gray-50 via-slate-50 to-white hover:bg-gray-100/80 transition-colors duration-200 cursor-pointer"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#3A55A5]/10 text-[#3A55A5] flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="text-base sm:text-lg font-bold text-[#08193C]">
+                      Previous Months Training Calendar
+                    </h3>
+                    <span className="text-xs px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 font-semibold border border-slate-200">
+                      June – September 2026
+                    </span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-0.5">
+                    Conducted sessions, workshops, and archived training batches ({allPreviousItems.length} programs)
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 text-sm font-bold text-[#3A55A5] self-end sm:self-center">
+                <span>{showPreviousMonths ? 'Hide Previous Months' : 'Show Previous Months'}</span>
+                <svg
+                  className={`w-4 h-4 transform transition-transform duration-300 ${showPreviousMonths ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </button>
+
+            {/* Collapsible Content */}
+            {showPreviousMonths && (
+              <div className="border-t border-gray-100 p-4 sm:p-6 bg-slate-50/50">
+                {/* Month Filter tabs */}
+                <div className="flex flex-wrap items-center gap-2 mb-6">
+                  <span className="text-xs font-bold text-gray-500 uppercase tracking-wider mr-1">Filter Month:</span>
+                  {[
+                    { key: 'all', label: `All Previous (${allPreviousItems.length})`, color: '#08193C' },
+                    { key: 'June 2026', label: `June 2026 (${previousTrainingCalendar[0].items.length})`, color: previousTrainingCalendar[0].color },
+                    { key: 'July 2026', label: `July 2026 (${previousTrainingCalendar[1].items.length})`, color: previousTrainingCalendar[1].color },
+                    { key: 'August 2026', label: `August 2026 (${previousTrainingCalendar[2].items.length})`, color: previousTrainingCalendar[2].color },
+                    { key: 'September 2026', label: `September 2026 (${previousTrainingCalendar[3].items.length})`, color: previousTrainingCalendar[3].color },
+                  ].map(tab => (
+                    <button
+                      key={tab.key}
+                      type="button"
+                      onClick={() => setPreviousMonthFilter(tab.key)}
+                      className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer ${previousMonthFilter === tab.key
+                        ? 'text-white shadow-sm scale-105'
+                        : 'bg-white text-gray-600 border border-gray-200 hover:border-gray-400'
+                        }`}
+                      style={previousMonthFilter === tab.key ? { backgroundColor: tab.color } : {}}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Table for Desktop */}
+                <div className="hidden md:block bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-gray-50 border-b border-gray-200">
+                        <th className="text-left px-4 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider w-[12%]">Month</th>
+                        <th className="text-left px-5 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider w-[30%]">Training Topic</th>
+                        <th className="text-left px-4 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Date</th>
+                        <th className="text-left px-4 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Mode</th>
+                        <th className="text-left px-4 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Venue</th>
+                        <th className="text-left px-4 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Faculty</th>
+                        <th className="text-center px-4 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Seats</th>
+                        <th className="text-left px-4 py-3 text-xs font-bold text-gray-500 uppercase tracking-wider">Remarks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {displayedPreviousItems.map((item, i) => {
+                        const modeCfg = modeConfig[item.mode] || modeConfig.ILT;
+                        return (
+                          <tr
+                            key={i}
+                            className={`border-b border-gray-100 hover:bg-gray-50 transition-colors duration-150 ${i % 2 === 0 ? '' : 'bg-gray-50/40'}`}
+                          >
+                            <td className="px-4 py-3">
+                              <span
+                                className="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold text-white whitespace-nowrap shadow-xs"
+                                style={{ backgroundColor: item.monthColor }}
+                              >
+                                {item.month}
+                              </span>
+                            </td>
+                            <td className="px-5 py-3">
+                              <span className="font-semibold text-[#08193C]">{item.topic}</span>
+                            </td>
+                            <td className="px-4 py-3 text-gray-600 whitespace-nowrap text-xs">{item.date}</td>
+                            <td className="px-4 py-3">
+                              <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${modeCfg.bg} ${modeCfg.text}`}>
+                                {item.mode}
+                              </span>
+                            </td>
+                            <td className="px-4 py-3 text-gray-600 text-xs">{item.venue === 'NA' ? <span className="text-gray-400 italic">Virtual</span> : item.venue}</td>
+                            <td className="px-4 py-3 text-gray-700 font-medium text-xs">{item.faculty}</td>
+                            <td className="px-4 py-3 text-center">
+                              <span
+                                className="inline-flex items-center justify-center w-7 h-7 rounded-full text-white text-xs font-bold"
+                                style={{ backgroundColor: item.monthColor }}
+                              >
+                                {item.batchSize}
+                              </span>
+                            </td>
+                            <td className="px-4 py-3 text-xs text-gray-500 italic">{item.remarks || '—'}</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Mobile Cards */}
+                <div className="md:hidden bg-white rounded-xl shadow-sm border border-gray-200 divide-y divide-gray-100">
+                  {displayedPreviousItems.map((item, i) => {
+                    const modeCfg = modeConfig[item.mode] || modeConfig.ILT;
+                    return (
+                      <div key={i} className="p-4">
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <span
+                            className="px-2 py-0.5 rounded text-[11px] font-bold text-white"
+                            style={{ backgroundColor: item.monthColor }}
+                          >
+                            {item.month}
+                          </span>
+                          <span className={`px-2 py-0.5 rounded text-xs font-bold ${modeCfg.bg} ${modeCfg.text}`}>{item.mode}</span>
+                        </div>
+                        <h4 className="font-semibold text-sm text-[#08193C] leading-tight mb-2">{item.topic}</h4>
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-gray-500">
+                          <span>📅 {item.date}</span>
+                          <span>📍 {item.venue === 'NA' ? 'Virtual' : item.venue}</span>
+                          <span>👤 {item.faculty}</span>
+                          <span>🪑 {item.batchSize} seats</span>
+                        </div>
+                        {item.remarks && (
+                          <p className="mt-1.5 text-xs text-[#F5872E] font-medium italic">{item.remarks}</p>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Summary stats */}
@@ -775,10 +1070,10 @@ export default function UpcomingProgramsSection() {
                 ) : (
                   <div className="space-y-4">
                     {selectedEvents.map((item, idx) => {
-                      const modeCfg = modeConfig[item.mode];
+                      const modeCfg = modeConfig[item.mode] || modeConfig.ILT;
                       return (
                         <div key={idx} className="bg-slate-50 rounded-2xl p-5 border border-slate-100 relative overflow-hidden group">
-                          <div className={`absolute top-0 left-0 w-1.5 h-full ${item.mode === 'ILT' ? 'bg-[#3A55A5]' : 'bg-[#40A748]'}`} />
+                          <div className={`absolute top-0 left-0 w-1.5 h-full ${item.mode === 'ILT' ? 'bg-[#3A55A5]' : item.mode === 'VILT' ? 'bg-[#40A748]' : 'bg-amber-500'}`} />
 
                           <div className="flex justify-between items-start gap-2 mn-1">
                             <span className={`px-2.5 py-0.5 rounded text-xs font-bold ${modeCfg.bg} ${modeCfg.text}`}>

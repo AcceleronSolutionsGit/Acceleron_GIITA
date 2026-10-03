@@ -10,11 +10,11 @@ const PuzzleImageGallery: React.FC = () => {
     `${basePath}/images/gallery/event1/main.jpg`,
     `${basePath}/images/gallery/event2/1.jpg`,
     `${basePath}/images/gallery/event3/1.jpg`,
-    `${basePath}/images/gallery/event4/1.jpeg`,
+    `${basePath}/images/gallery/event4/1.jpg`,
     `${basePath}/images/gallery/event1/1.jpg`,
     `${basePath}/images/gallery/event2/2.jpg`,
     `${basePath}/images/gallery/event3/2.jpg`,
-    `${basePath}/images/gallery/event4/2.jpeg`,
+    `${basePath}/images/gallery/event4/2.jpg`,
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

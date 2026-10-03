@@ -2,10 +2,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const videoSrc = 'https://pub-6e380ffc48a9477ea8031f2a34a815f6.r2.dev/GIITA-V3.mp4';
 
-type Mode = 'ILT' | 'VILT';
+type Mode = 'ILT' | 'VILT' | 'TBD';
 
 interface TrainingItem {
   topic: string;
@@ -21,6 +20,8 @@ interface TrainingItem {
 
 interface MonthData {
   month: string;
+  year: number;
+  monthIndex: number;
   color: string;
   bgColor: string;
   items: TrainingItem[];
@@ -28,216 +29,217 @@ interface MonthData {
 
 const trainingCalendar: MonthData[] = [
   {
-    month: 'June 2026',
+    month: 'October 2026',
+    year: 2026,
+    monthIndex: 9,
     color: '#3A55A5',
     bgColor: 'bg-[#3A55A5]',
     items: [
-      { topic: 'Impactful Communication', date: '01 Jun 2026', mode: 'VILT', venue: 'NA', faculty: 'Vaishali Bairagi', batchSize: 15, start: '2026-06-01', end: '2026-06-01', remarks: 'Tgt. Audience-PS P&E ISR' },
-      { topic: 'Campus to Corporate', date: '5-6 Jun 2026', mode: 'ILT', venue: 'Kokata', faculty: 'Kiran Agarwal', batchSize: 13, start: '2026-06-05', end: '2026-06-06', remarks: 'Newly Join Freshers' },
-      { topic: 'Creating Synergy at Work', date: '09 Jun 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Vaishali Bairagi', batchSize: 15, start: '2026-06-09', end: '2026-06-09' },
-      { topic: 'Personal Effectiveness', date: '11–12 Jun 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Kiran Agarwal', batchSize: 15, start: '2026-06-11', end: '2026-06-12' },
-      { topic: 'DEI & PoSH Awareness Workshop', date: '16 Jun 2026', mode: 'VILT', venue: 'NA', faculty: 'Vaishali Bairagi', batchSize: 20, start: '2026-06-16', end: '2026-06-16' },
-      { topic: 'First Time Leader', date: '18–19 Jun 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Nilasish Dey', batchSize: 15, start: '2026-06-18', end: '2026-06-19' },
-      { topic: '6 SIGMA Green Belt (GB) Training — Week 1', date: '17–20 Jun 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Biswajit Mukherjee', batchSize: 15, remarks: '50% reservation for Female Candidates', start: '2026-06-17', end: '2026-06-20' },
-      { topic: 'Effective PowerPoint Presentation', date: '22–23 Jun 2026', mode: 'VILT', venue: 'NA', faculty: 'External', batchSize: 25, start: '2026-06-22', end: '2026-06-23' },
-      { topic: 'DEI & PoSH Awareness Workshop', date: '24 Jun 2026', mode: 'VILT', venue: 'NA', faculty: 'Kiran Agarwal', batchSize: 20, start: '2026-06-24', end: '2026-06-24' },
-      { topic: '6 SIGMA GB Project Coaching (Batch 1)', date: '29 Jun–01 Jul 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Biswajit Mukherjee', batchSize: 7, start: '2026-06-29', end: '2026-07-01' },
       {
-        topic: 'Creating Synergy at Work',
-        date: '12.06.26',
-        mode: 'ILT',
-        venue: 'Greater Noida',
-        faculty: 'Vaishali Bairagi',
-        batchSize: 12,
-        start: '2026-06-12',
-        end: '2026-06-12'
-      },
-      {
-        topic: 'DEI & PoSH Awareness Workshop',
-        date: '19.06.26',
-        mode: 'VILT',
-        venue: 'NA',
-        faculty: 'Vaishali Bairagi',
-        batchSize: 61,
-        start: '2026-06-19',
-        end: '2026-06-19'
-      },
-      {
-        topic: 'First Time Leader',
-        date: '24.06.26–25.06.26',
-        mode: 'ILT',
-        venue: 'Kolkata',
-        faculty: 'Nilasish Dey',
-        batchSize: 5,
-        start: '2026-06-24',
-        end: '2026-06-25',
-        remarks: 'RMSPL-2 & PCM-1'
-      },
-      {
-        topic: 'DEI & PoSH Awareness Workshop',
-        date: '24.06.26',
-        mode: 'VILT',
-        venue: 'NA',
-        faculty: 'Kiran Agarwal',
-        batchSize: 60,
-        start: '2026-06-24',
-        end: '2026-06-24'
-      },
-      {
-        topic: 'Effective Power Point Presentation (Batch -1)',
-        date: '24.06.26–25.06.26',
+        topic: 'Prioritization for Operational Excellence',
+        date: '06.10.26',
         mode: 'VILT',
         venue: 'NA',
         faculty: 'External',
-        batchSize: 21,
-        start: '2026-06-24',
-        end: '2026-06-25',
-        remarks: 'GCPL-5'
-      }
+        batchSize: 15,
+        remarks: 'GEPL',
+        start: '2026-10-06',
+        end: '2026-10-06',
+      },
+      {
+        topic: 'DEI & POSH Awareness',
+        date: '06.10.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'Vaishali Bairagi',
+        batchSize: 15,
+        remarks: 'GCPL (FOC)',
+        start: '2026-10-06',
+        end: '2026-10-06',
+      },
+      {
+        topic: 'Finance for Non-Finance',
+        date: '12.10.26–13.10.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'External (iSkillBox)',
+        batchSize: 15,
+        remarks: 'Mr. Alok',
+        start: '2026-10-12',
+        end: '2026-10-13',
+      },
+      {
+        topic: 'Navigating Change with Confidence',
+        date: '14.10.26–15.10.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'Vaishali Bairagi',
+        batchSize: 15,
+        remarks: 'Acceleron',
+        start: '2026-10-14',
+        end: '2026-10-15',
+      },
+      {
+        topic: 'The Art of Connection: Effective Communication',
+        date: '30.10.26–31.10.26',
+        mode: 'ILT',
+        venue: 'Kolkata',
+        faculty: 'Kiran Agarwal',
+        batchSize: 15,
+        remarks: 'Acceleron',
+        start: '2026-10-30',
+        end: '2026-10-31',
+      },
     ],
   },
   {
-    month: 'July 2026',
+    month: 'November 2026',
+    year: 2026,
+    monthIndex: 10,
     color: '#F5872E',
     bgColor: 'bg-[#F5872E]',
     items: [
-      { topic: 'Interviewing Skill Workshop', date: '03–04 Jul 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Nilasish Dey', batchSize: 15, start: '2026-07-03', end: '2026-07-04' },
-      { topic: 'We Before Me: Teamwork Basics', date: '07 Jul 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Vaishali Bairagi', batchSize: 15, start: '2026-07-07', end: '2026-07-07' },
-      { topic: '6 SIGMA GB Project Coaching (Batch 2)', date: '08–10 Jul 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Biswajit Mukherjee', batchSize: 8, start: '2026-07-08', end: '2026-07-10' },
-      { topic: 'Value Selling', date: '13–14 Jul 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Biswajit Mukherjee', batchSize: 15, remarks: 'Target audience: Sales and After Market', start: '2026-07-13', end: '2026-07-14' },
-      { topic: 'The Winning Edge', date: '15 Jul 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Kiran Agarwal', batchSize: 15, start: '2026-07-15', end: '2026-07-15' },
-      { topic: 'Finance for Non Finance', date: '16 Jul 2026', mode: 'VILT', venue: 'NA', faculty: 'External', batchSize: 25, start: '2026-07-16', end: '2026-07-16' },
-      { topic: '6 SIGMA Green Belt Training — Week 2', date: '20–23 Jul 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Biswajit Mukherjee', batchSize: 15, remarks: '50% reservation for Female Candidates', start: '2026-07-20', end: '2026-07-23' },
-      { topic: 'Advance Excel', date: '22–23 Jul 2026', mode: 'VILT', venue: 'NA', faculty: 'External', batchSize: 25, start: '2026-07-22', end: '2026-07-23' },
       {
-        topic: 'We Before Me: Teamwork Basics',
-        date: '07.07.26–08.07.26',
-        mode: 'VILT',
-        venue: 'NA',
-        faculty: 'Vaishali Bairagi',
-        batchSize: 25,
-        start: '2026-07-07',
-        end: '2026-07-08',
-        remarks: 'GTPL-2'
-      },
-      {
-        topic: 'Personal Effectiveness',
-        date: '15.07.26 & 16.07.26',
-        mode: 'ILT',
-        venue: 'Asansol',
-        faculty: 'Nilasish Dey',
-        batchSize: 11,
-        start: '2026-07-15',
-        end: '2026-07-16'
-      },
-      {
-        topic: 'The Winning Edge',
-        date: '15.07.26',
+        topic: 'Creativity & Design Thinking',
+        date: '3.11.26–4.11.26',
         mode: 'ILT',
         venue: 'Kolkata',
-        faculty: 'Kiran Agarwal',
+        faculty: 'Kiran',
         batchSize: 15,
-        start: '2026-07-15',
-        end: '2026-07-15'
+        remarks: 'GEPL',
+        start: '2026-11-03',
+        end: '2026-11-04',
       },
       {
-        topic: 'Interviewing Skill Workshop',
-        date: '21.07.26–22.07.26',
+        topic: 'First Time Managers: Emerging Leader',
+        date: '05.11.26–06.11.26',
         mode: 'ILT',
         venue: 'Kolkata',
-        faculty: 'Nilasish Dey',
+        faculty: 'Kiran',
         batchSize: 15,
-        start: '2026-07-21',
-        end: '2026-07-22'
+        remarks: 'Acceleron+TIL',
+        start: '2026-11-05',
+        end: '2026-11-06',
       },
       {
-        topic: 'Campus to Corporate',
-        date: '17.07.26–18.07.26',
-        mode: 'ILT',
-        venue: 'Kolkata',
-        faculty: 'Kiran Agarwal',
-        batchSize: 44,
-        start: '2026-07-17',
-        end: '2026-07-18',
-        remarks: 'Tgt Audience-CS, P&E, Facility, Corporate PS'
-      },
-      {
-        topic: 'Campus to Corporate',
-        date: '17.07.26–18.07.26',
+        topic: '5S Workshop',
+        date: '17.11.26',
         mode: 'ILT',
         venue: 'Greater Noida',
+        faculty: 'External',
+        batchSize: 15,
+        remarks: 'GCPL',
+        start: '2026-11-17',
+        end: '2026-11-17',
+      },
+      {
+        topic: 'Seven Habits of Highly Effective People',
+        date: '17.11.26–18.11.26',
+        mode: 'VILT',
+        venue: 'NA',
         faculty: 'Vaishali Bairagi',
-        batchSize: 33,
-        start: '2026-07-17',
-        end: '2026-07-18',
-        remarks: 'Tgt Audience-MARC Mining, Facility, HR'
+        batchSize: 15,
+        remarks: 'Acceleron',
+        start: '2026-11-17',
+        end: '2026-11-18',
       },
       {
-        topic: 'Effective Power Point Presentation (Batch -2)',
-        date: '20.07.26–21.07.26',
+        topic: 'Advance Excel',
+        date: '19.11.26–20.11.26',
         mode: 'VILT',
         venue: 'NA',
         faculty: 'External',
-        batchSize: 22,
-        start: '2026-07-20',
-        end: '2026-07-21',
-        remarks: 'ISG-4'
+        batchSize: 15,
+        remarks: 'All',
+        start: '2026-11-19',
+        end: '2026-11-20',
       },
       {
-        topic: '6 SIGMA Green Belt (GB) Training (Week 1)',
-        date: '20.07.26–23.07.26',
-        mode: 'ILT',
-        venue: 'Kolkata',
-        faculty: 'Biswajit Mukherjee',
-        batchSize: 7,
-        start: '2026-07-20',
-        end: '2026-07-23',
-        remarks: '50% reservation for Female Candidates (TIL-6)'
-      },
-      {
-        topic: 'Advanced Excel',
-        date: '22.07.26–23.07.26',
+        topic: 'DEI & POSH Awareness',
+        date: '25.11.26',
         mode: 'VILT',
         venue: 'NA',
-        faculty: 'External',
-        batchSize: 4,
-        start: '2026-07-22',
-        end: '2026-07-23',
-        remarks: 'GCPL-19'
-      }
+        faculty: 'Vaishali Bairagi',
+        batchSize: 15,
+        remarks: 'GTPL',
+        start: '2026-11-25',
+        end: '2026-11-25',
+      },
     ],
   },
   {
-    month: 'August 2026',
+    month: 'December 2026',
+    year: 2026,
+    monthIndex: 11,
     color: '#40A748',
     bgColor: 'bg-[#40A748]',
     items: [
-      { topic: '6 SIGMA GB Project Coaching (Batch 1)', date: '03–05 Aug 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Biswajit Mukherjee', batchSize: 7, start: '2026-08-03', end: '2026-08-05' },
-      { topic: 'Sales Effectiveness', date: '06–07 Aug 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'External', batchSize: 15, start: '2026-08-06', end: '2026-08-07' },
-      { topic: 'The Winning Edge', date: '11–12 Aug 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Kiran Agarwal', batchSize: 15, start: '2026-08-11', end: '2026-08-12' },
-      { topic: 'DEI & Posh Awareness Workshop', date: '13 Aug 2026', mode: 'VILT', venue: 'NA', faculty: 'Vaishali Bairagi', batchSize: 20, start: '2026-08-13', end: '2026-08-13' },
-      { topic: '6 SIGMA GB Project Coaching (Batch 2)', date: '12–14 Aug 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Biswajit Mukherjee', batchSize: 8, start: '2026-08-12', end: '2026-08-14' },
-      { topic: 'Q.M.S – ISO Training', date: '14 Aug 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'External', batchSize: 15, start: '2026-08-14', end: '2026-08-14' },
-      { topic: 'Art of Effective Change Management', date: '18 Aug 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Vaishali Bairagi', batchSize: 15, start: '2026-08-18', end: '2026-08-18' },
-      { topic: 'SOS & Contamination Control', date: '21 Aug 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Dr. D Mukherjee', batchSize: 15, start: '2026-08-21', end: '2026-08-21' },
-      { topic: 'Effective PowerPoint Presentation', date: '20–21 Aug 2026', mode: 'VILT', venue: 'NA', faculty: 'External', batchSize: 25, start: '2026-08-20', end: '2026-08-21' },
-      { topic: 'DEI & Posh Awareness Workshop', date: '22 Aug 2026', mode: 'VILT', venue: 'NA', faculty: 'Kiran Agarwal', batchSize: 20, start: '2026-08-22', end: '2026-08-22' },
-      { topic: 'Finance for Non Finance', date: '25 Aug 2026', mode: 'VILT', venue: 'NA', faculty: 'External', batchSize: 25, start: '2026-08-25', end: '2026-08-25' },
-    ],
-  },
-  {
-    month: 'September 2026',
-    color: '#8B5CF6',
-    bgColor: 'bg-[#8B5CF6]',
-    items: [
-      { topic: 'Interviewing Skill Workshop', date: '03–04 Sep 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Nilasish Dey', batchSize: 15, start: '2026-09-03', end: '2026-09-04' },
-      { topic: 'SOS & Contamination Control', date: '07 Sep 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Dr. D Mukherjee', batchSize: 15, start: '2026-09-07', end: '2026-09-07' },
-      { topic: 'The Winning Edge', date: '08 Sep 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Vaishali Bairagi', batchSize: 15, start: '2026-09-08', end: '2026-09-08' },
-      { topic: 'Impactful Communication', date: '11 Sep 2026', mode: 'ILT', venue: 'Kolkata', faculty: 'Kiran Agarwal', batchSize: 15, start: '2026-09-11', end: '2026-09-11' },
-      { topic: 'Q.M.S – ISO Training', date: '14 Sep 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'External', batchSize: 15, start: '2026-09-14', end: '2026-09-14' },
-      { topic: 'Advance Excel', date: '15–16 Sep 2026', mode: 'VILT', venue: 'NA', faculty: 'External', batchSize: 25, start: '2026-09-15', end: '2026-09-16' },
-      { topic: 'DEI & Posh Awareness Workshop', date: '18 Sep 2026', mode: 'VILT', venue: 'NA', faculty: 'Vaishali Bairagi', batchSize: 20, start: '2026-09-18', end: '2026-09-18' },
-      { topic: 'Personal Effectiveness', date: '22–23 Sep 2026', mode: 'ILT', venue: 'Greater Noida', faculty: 'Vaishali Bairagi', batchSize: 15, start: '2026-09-22', end: '2026-09-23' },
+      {
+        topic: 'Secret to Customer Delight',
+        date: '08.12.26–09.12.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'Samuel',
+        batchSize: 15,
+        remarks: 'Acceleron+TIL+GCPL',
+        start: '2026-12-08',
+        end: '2026-12-09',
+      },
+      {
+        topic: 'DEI & POSH Awareness',
+        date: '15.12.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'Vaishali Bairagi',
+        batchSize: 15,
+        remarks: 'GEPL',
+        start: '2026-12-15',
+        end: '2026-12-15',
+      },
+      {
+        topic: 'Resilience in High-Pressure Environments',
+        date: '15.12.26',
+        mode: 'TBD',
+        venue: 'TBD',
+        faculty: 'TBD',
+        batchSize: 15,
+        remarks: 'GEPL',
+        start: '2026-12-15',
+        end: '2026-12-15',
+      },
+      {
+        topic: 'Mastering Negotiation',
+        date: '17.12.26',
+        mode: 'TBD',
+        venue: 'TBD',
+        faculty: 'External/Samuel',
+        batchSize: 15,
+        remarks: 'GCPL+Acceleron',
+        start: '2026-12-17',
+        end: '2026-12-17',
+      },
+      {
+        topic: 'Effective PowerPoint Presentation',
+        date: '18.12.26–19.12.26',
+        mode: 'VILT',
+        venue: 'NA',
+        faculty: 'External',
+        batchSize: 15,
+        remarks: 'All',
+        start: '2026-12-18',
+        end: '2026-12-19',
+      },
+      {
+        topic: 'Interviewing Skills Workshop',
+        date: '22.12.26',
+        mode: 'ILT',
+        venue: 'NA',
+        faculty: 'TBD',
+        batchSize: 15,
+        remarks: 'TIL',
+        start: '2026-12-22',
+        end: '2026-12-22',
+      },
     ],
   },
 ];
@@ -245,6 +247,7 @@ const trainingCalendar: MonthData[] = [
 const modeConfig: Record<Mode, { label: string; bg: string; text: string }> = {
   ILT: { label: 'ILT', bg: 'bg-blue-100', text: 'text-blue-700' },
   VILT: { label: 'VILT', bg: 'bg-green-100', text: 'text-green-700' },
+  TBD: { label: 'TBD', bg: 'bg-amber-100', text: 'text-amber-800' },
 };
 
 const parseLocalDate = (dateStr: string) => {
@@ -303,8 +306,8 @@ export default function UpcomingProgramsSection() {
   const current = trainingCalendar[activeMonth];
 
   // Calendar generation logic
-  const year = 2026;
-  const monthIndex = activeMonth === 0 ? 5 : activeMonth === 1 ? 6 : activeMonth === 2 ? 7 : 8;
+  const year = current ? current.year : 2026;
+  const monthIndex = current ? current.monthIndex : 9;
 
   const firstDayOfMonth = new Date(year, monthIndex, 1).getDay();
   const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
@@ -404,19 +407,22 @@ export default function UpcomingProgramsSection() {
             </span>
           </h2>
           <p className="mt-6 text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            GIITA Training Calendar — June to September 2026. Secure your spot in an upcoming batch or workshop.
+            GIITA Training Calendar — October to December 2026. Secure your spot in an upcoming batch or workshop.
           </p>
         </div>
 
         {/* View Switcher and Legend */}
         <div className={`flex flex-col md:flex-row items-center justify-between gap-4 mb-8 transition-all duration-700 delay-100 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
           {/* Mode Legend */}
-          <div className="flex justify-center gap-6 text-xs text-gray-500 order-2 md:order-1">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs text-gray-500 order-2 md:order-1">
             <span className="flex items-center gap-1.5">
               <span className="px-2 py-0.5 rounded bg-blue-100 text-blue-700 font-semibold">ILT</span> Instructor Led Training
             </span>
             <span className="flex items-center gap-1.5">
               <span className="px-2 py-0.5 rounded bg-green-100 text-green-700 font-semibold">VILT</span> Virtual Instructor Led Training
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold">TBD</span> To Be Decided
             </span>
           </div>
 
@@ -640,7 +646,11 @@ export default function UpcomingProgramsSection() {
                             {dayEvents.map((evt, i) => (
                               <span
                                 key={i}
-                                className={`w-1.5 h-1.5 rounded-full ${evt.mode === 'ILT' ? 'bg-[#3A55A5]' : 'bg-[#40A748]'
+                                className={`w-1.5 h-1.5 rounded-full ${evt.mode === 'ILT'
+                                  ? 'bg-[#3A55A5]'
+                                  : evt.mode === 'VILT'
+                                    ? 'bg-[#40A748]'
+                                    : 'bg-[#F5872E]'
                                   }`}
                               />
                             ))}
@@ -656,7 +666,9 @@ export default function UpcomingProgramsSection() {
                             title={evt.topic}
                             className={`text-[10px] px-2 py-0.5 rounded border font-semibold truncate leading-tight transition-transform duration-200 hover:scale-[1.02] ${evt.mode === 'ILT'
                               ? 'bg-blue-50 text-blue-700 border-blue-200'
-                              : 'bg-green-50 text-green-700 border-green-200'
+                              : evt.mode === 'VILT'
+                                ? 'bg-green-50 text-green-700 border-green-200'
+                                : 'bg-amber-50 text-amber-800 border-amber-200'
                               }`}
                           >
                             {evt.topic}
@@ -779,7 +791,7 @@ export default function UpcomingProgramsSection() {
                       const modeCfg = modeConfig[item.mode];
                       return (
                         <div key={idx} className="bg-slate-50 rounded-2xl p-5 border border-slate-100 relative overflow-hidden group">
-                          <div className={`absolute top-0 left-0 w-1.5 h-full ${item.mode === 'ILT' ? 'bg-[#3A55A5]' : 'bg-[#40A748]'}`} />
+                          <div className={`absolute top-0 left-0 w-1.5 h-full ${item.mode === 'ILT' ? 'bg-[#3A55A5]' : item.mode === 'VILT' ? 'bg-[#40A748]' : 'bg-[#F5872E]'}`} />
 
                           <div className="flex justify-between items-start gap-2 mn-1">
                             <span className={`px-2.5 py-0.5 rounded text-xs font-bold ${modeCfg.bg} ${modeCfg.text}`}>

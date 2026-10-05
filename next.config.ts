@@ -1,4 +1,4 @@
-`// next.config.ts
+// next.config.ts
 import type { NextConfig } from 'next';
 
 // 🔐 Security headers
@@ -59,14 +59,9 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  experimental: {
-    serverActions: {},
-  },
-
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production', // Strip console logs in prod
   },
 };
 
 export default nextConfig;
-`

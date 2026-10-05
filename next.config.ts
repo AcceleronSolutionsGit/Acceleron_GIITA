@@ -43,7 +43,7 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  basePath: '/giita',
+  basePath: '/',
 
   poweredByHeader: false, // Hide X-Powered-By
 

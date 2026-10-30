@@ -33,6 +33,7 @@ const securityHeaders = [
       "img-src 'self' data: blob:;",
       "font-src 'self' data:;",
       "connect-src 'self';",
+      "media-src 'self' https://pub-6e380ffc48a9477ea8031f2a34a815f6.r2.dev https://*.r2.dev blob: data:;",
       "frame-src 'self' https://*.openstreetmap.org https://*.google.com https://*.google.co.in;",
       "frame-ancestors 'self';",
       "base-uri 'self';",
